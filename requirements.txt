@@ -3,4 +3,7 @@ numpy
 matplotlib
 scikit-learn
 dill
+catboost
+xgboost
+flask
 #-e .
