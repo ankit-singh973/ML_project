@@ -3,10 +3,13 @@ import sys
 sys.path.insert(0, 'D:\Storage\mlproject\src') #sys.path.append('D:\Storage\mlproject\src') 
 from exception import CustomException
 from logger import logging
+from components.data_transformation import DataTransformation
+from components.data_transformation import DataTransformationConfig
 import pandas as pd
 
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
+
 
 
 @dataclass
@@ -49,5 +52,9 @@ class DataIngestion: #when we initialize it
             raise CustomException(e, sys)
 
 if __name__ == "__main__":
+# combining data tranformation and ingestion
     obj = DataIngestion()
-    obj.initiate_data_ingestion()
+    train_data, test_data = obj.initiate_data_ingestion()
+
+    data_transformation = DataTransformation()
+    data_transformation.initiate_data_transformation(train_data, test_data)
