@@ -1,7 +1,7 @@
 from flask import Flask,request,render_template
 import numpy as np
 import pandas as pd
-
+import sys
 from sklearn.preprocessing import StandardScaler
 
 sys.path.insert(0, 'D:\Storage\mlproject\src') #sys.path.append('D:\Storage\mlproject\src') 
